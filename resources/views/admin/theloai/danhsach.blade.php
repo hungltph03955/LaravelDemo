@@ -4,39 +4,37 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Category
-                    <small>List</small>
+                <h1 class="page-header">Thể Loại
+                    <small>Danh Sách</small>
                 </h1>
             </div>
+             @include('admin.blocks.error')
             <!-- /.col-lg-12 -->
             <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                 <thead>
                     <tr align="center">
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Category Parent</th>
-                        <th>Status</th>
-                        <th>Delete</th>
-                        <th>Edit</th>
+                        <th>Thứ tự</th>
+                        <th>Tên thể loại</th>
+                        <th>Thời gian cập nhật</th>
+                        <th>Xóa</th>
+                        <th>Sửa</th>
                     </tr>
                 </thead>
                 <tbody>
+                <?php $stt = 0 ?>
+                @foreach($theloai as $item_theloai)
+                <?php $stt++ ?>
                     <tr class="odd gradeX" align="center">
-                        <td>1</td>
-                        <td>Tin Tức</td>
-                        <td>None</td>
-                        <td>Hiện</td>
-                        <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="#"> Delete</a></td>
-                        <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="#">Edit</a></td>
+                        <td>{{ $stt }}</td>
+                        <td>{{ $item_theloai['Ten'] }}</td>
+                        <td><?php \Carbon\Carbon::setLocale('vi')  ?>
+                        {{ \Carbon\Carbon::createFromTimestamp(strtotime($item_theloai["created_at"]))->diffForHumans() }}
+                        </td>
+                        <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="{{ route('gettheloaiXoa', ['id' => $item_theloai["id"] ]) }}" onclick ="return xacnhanxoa('Bạn có chắc chắn muốn xóa')">Xóa</a></td>
+
+                        <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="{{ route('gettheloaiSua', ['id' => $item_theloai["id"] ]) }}">Sửa</a></td>
                     </tr>
-                    <tr class="even gradeC" align="center">
-                        <td>2</td>
-                        <td>Bóng Đá</td>
-                        <td>Thể Thao</td>
-                        <td>Ẩn</td>
-                        <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="#"> Delete</a></td>
-                        <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="#">Edit</a></td>
-                    </tr>
+                @endforeach
                 </tbody>
             </table>
         </div>
