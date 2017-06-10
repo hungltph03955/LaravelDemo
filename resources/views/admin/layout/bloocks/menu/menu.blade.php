@@ -31,10 +31,10 @@
                             <a href="#"><i class="fa fa-book fa-fw"></i>Loại Tin<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="#">Danh sách loại tin</a>
+                                    <a href="{{ route('getloaitinDanhSach') }}">Danh sách loại tin</a>
                                 </li>
                                 <li>
-                                    <a href="#">Thêm loại tin</a>
+                                    <a href="{{ route('getloaitinThem') }}">Thêm loại tin</a>
                                 </li>
                             </ul>
                         </li>

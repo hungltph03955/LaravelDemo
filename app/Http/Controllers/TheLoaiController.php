@@ -29,7 +29,7 @@ class TheLoaiController extends Controller
     	$TheLoai->TenKhongDau 	= str_slug($TheLoai->Ten,'-');
     	$TheLoai->created_at 	= new DateTime();
     	$TheLoai->save();
-    	return redirect()->route('gettheloaiDanhSach')->with(['flash_level' =>'success','flash_message' => 'Thêm Thể loại thành công']);
+    	return redirect()->route('gettheloaiDanhSach')->with(['flash_level' =>'success','flash_message' => 'Thêm Thể loại thành công !']);
     }
 
     public function gettheloaiSua($id) 
@@ -44,13 +44,13 @@ class TheLoaiController extends Controller
     	$TheLoai->TenKhongDau 	= str_slug($TheLoai->Ten,'-');
     	$TheLoai->created_at 	= new DateTime();
     	$TheLoai->save();
-    	return redirect()->route('gettheloaiDanhSach')->with(['flash_level' =>'success','flash_message' => 'Sửa Thể loại thành công']);
+    	return redirect()->route('gettheloaiDanhSach')->with(['flash_level' =>'success','flash_message' => 'Sửa Thể loại thành công !']);
     }
     public function gettheloaiXoa($id) 
     {
     	$TheLoai = TheLoai::findOrFail($id);
     	$TheLoai->delete($id);
-    	return redirect()->route('gettheloaiDanhSach')->with(['flash_level' =>'success','flash_message' => 'Xóa Thể loại thành công']);
+    	return redirect()->route('gettheloaiDanhSach')->with(['flash_level' =>'success','flash_message' => 'Xóa Thể loại thành công !']);
     }
 
 

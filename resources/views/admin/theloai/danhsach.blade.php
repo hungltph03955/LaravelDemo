@@ -15,7 +15,7 @@
                     <tr align="center">
                         <th>Thứ tự</th>
                         <th>Tên thể loại</th>
-                        <th>Thời gian cập nhật</th>
+                        <th>cập nhật</th>
                         <th>Xóa</th>
                         <th>Sửa</th>
                     </tr>
