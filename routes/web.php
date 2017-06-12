@@ -34,7 +34,7 @@ Route::group(['prefix' => 'admin'],function(){
 		Route::post('sua/{id}',['as'=>'postloaitinSua','uses'=>'LoaiTinController@postloaitinSua'])->where('id', '[0-9]+');
 
 
-		Route::get('xoa',['as'=>'getloaitinXoa','uses'=>'LoaiTinController@getloaitinXoa']);
+		Route::get('xoa/{id}',['as'=>'getloaitinXoa','uses'=>'LoaiTinController@getloaitinXoa'])->where('id', '[0-9]+');
 	});
 });
 

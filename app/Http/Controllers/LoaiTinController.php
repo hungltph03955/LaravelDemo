@@ -54,6 +54,11 @@ class LoaiTinController extends Controller
     	return redirect()->route('getloaitinDanhSach')->with(['flash_level' =>'success','flash_message' => 'Sửa loại tin thành công !']);
     }
 
+    public function getloaitinXoa($id) 
+    {
+        echo $id;die;
+    }
+
 
 
 
