@@ -42,7 +42,7 @@
                             <a href="#"><i class="fa fa-cube fa-fw"></i>Tin Tức<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="#">Danh sách tin tức</a>
+                                    <a href="{{ route('gettintucDanhSach') }}">Danh sách tin tức</a>
                                 </li>
                                 <li>
                                     <a href="#">Thêm tin tức</a>

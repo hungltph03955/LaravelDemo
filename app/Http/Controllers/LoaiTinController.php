@@ -56,7 +56,9 @@ class LoaiTinController extends Controller
 
     public function getloaitinXoa($id) 
     {
-        echo $id;die;
+        $Loaitin = LoaiTin::findOrFail($id);
+        $Loaitin->delete($id);
+        return redirect()->route('getloaitinDanhSach')->with(['flash_level' =>'success','flash_message' => 'Xóa loại tin thành công !']);
     }
 
 

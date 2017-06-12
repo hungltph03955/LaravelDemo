@@ -4,42 +4,44 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Product
-                    <small>List</small>
+                <h1 class="page-header">Tin Tức
+                    <small>Danh Sách</small>
                 </h1>
             </div>
             <!-- /.col-lg-12 -->
             <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                 <thead>
                     <tr align="center">
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Price</th>
-                        <th>Date</th>
-                        <th>Status</th>
-                        <th>Delete</th>
-                        <th>Edit</th>
+                        <th>Thứ Tự</th>
+                        <th>Tin tức</th>
+                        <th>Loại Tin(Thuộc)</th>
+                        <th>Thể Loại(Thuộc)</th>
+                        <th>Tóm Tắt</th>
+                        <th>Số lượt Xem</th>
+                        <th>Hình Ảnh</th>
+                        <th>Xóa</th>
+                        <th>Sửa</th>
                     </tr>
                 </thead>
                 <tbody>
+                 <?php $stt = 0 ?>
+                 @foreach($tintuc as $item_item_tintuc)
+                 <?php $stt++ ?>
                     <tr class="odd gradeX" align="center">
-                        <td>1</td>
-                        <td>Áo Thun Nana</td>
-                        <td>200.000 VNĐ</td>
-                        <td>3 Minutes Age</td>
-                        <td>Hiện</td>
+                        <td>{{ $stt }}</td>
+                        <td>{{ $item_item_tintuc->TieuDe }}</td>
+                        <td>{{ $item_item_tintuc->loaitin->Ten }}</td>
+                        <td>{{ $item_item_tintuc->loaitin->theloai->Ten }}</td>
+                        <td>{{ $item_item_tintuc->TomTat }}</td>
+                        <td>{{ $item_item_tintuc->SoLuotXem }}</td>
+                        <td style="width: 25%;">
+                            <img style="width: 20%;" src="{!!  asset('/upload/tintuc/'.$item_item_tintuc['Hinh']) !!}" alt=""/>
+                        </td>
                         <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="#"> Delete</a></td>
                         <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="#">Edit</a></td>
                     </tr>
-                    <tr class="even gradeC" align="center">
-                        <td>2</td>
-                        <td>Áo Thun Polo</td>
-                        <td>250.000 VNĐ</td>
-                        <td>1 Hours Age</td>
-                        <td>Ẩn</td>
-                        <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="#"> Delete</a></td>
-                        <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="#">Edit</a></td>
-                    </tr>
+                @endforeach
+
                 </tbody>
             </table>
         </div>
