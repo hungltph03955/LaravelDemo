@@ -17,7 +17,6 @@
                         <th>Loại Tin(Thuộc)</th>
                         <th>Thể Loại(Thuộc)</th>
                         <th>Tóm Tắt</th>
-                        <th>Số lượt Xem</th>
                         <th>Hình Ảnh</th>
                         <th>Xóa</th>
                         <th>Sửa</th>
@@ -33,9 +32,8 @@
                         <td>{{ $item_item_tintuc->loaitin->Ten }}</td>
                         <td>{{ $item_item_tintuc->loaitin->theloai->Ten }}</td>
                         <td>{{ $item_item_tintuc->TomTat }}</td>
-                        <td>{{ $item_item_tintuc->SoLuotXem }}</td>
-                        <td style="width: 25%;">
-                            <img style="width: 20%;" src="{!!  asset('/upload/tintuc/'.$item_item_tintuc['Hinh']) !!}" alt=""/>
+                        <td>
+                            <img style="width: 100%;" src="{!! asset('/upload/tintuc/'.$item_item_tintuc['Hinh']) !!}" alt=""/>
                         </td>
                         <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="#"> Delete</a></td>
                         <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="#">Edit</a></td>

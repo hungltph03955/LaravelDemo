@@ -32,10 +32,20 @@ Route::group(['prefix' => 'admin'],function(){
 		Route::post('them',['as'=>'postloaitinThem','uses'=>'LoaiTinController@postloaitinThem']);
 		Route::get('sua/{id}',['as'=>'getloaitinSua','uses'=>'LoaiTinController@getloaitinSua'])->where('id', '[0-9]+');
 		Route::post('sua/{id}',['as'=>'postloaitinSua','uses'=>'LoaiTinController@postloaitinSua'])->where('id', '[0-9]+');
-
-
 		Route::get('xoa/{id}',['as'=>'getloaitinXoa','uses'=>'LoaiTinController@getloaitinXoa'])->where('id', '[0-9]+');
 	});
+
+	Route::group(['prefix' => 'tintuc'],function(){
+		Route::get('danhsach',['as'=>'gettintucDanhSach','uses'=>'TinTucController@gettintucDanhSach']);
+
+		Route::get('them',['as'=>'gettintucThem','uses'=>'TinTucController@gettintucThem']);
+		Route::post('them',['as'=>'posttintucThem','uses'=>'TinTucController@posttintucThem']);
+		Route::get('sua/{id}',['as'=>'gettintucSua','uses'=>'TinTucController@gettintucSua'])->where('id', '[0-9]+');
+		Route::post('sua/{id}',['as'=>'posttintucSua','uses'=>'TinTucController@posttintucSua'])->where('id', '[0-9]+');
+		Route::get('xoa/{id}',['as'=>'gettintucXoa','uses'=>'TinTucController@gettintucXoa'])->where('id', '[0-9]+');
+	});
+
+
 });
 
 
