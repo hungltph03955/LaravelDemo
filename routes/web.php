@@ -45,11 +45,17 @@ Route::group(['prefix' => 'admin'],function(){
 		Route::get('xoa/{id}',['as'=>'gettintucXoa','uses'=>'TinTucController@gettintucXoa'])->where('id', '[0-9]+');
 	});
 
+	/*Route::group(['prefix'=>'ajax'],function(){
+		Route::get('loaitin/{idTheLoai}','uses'=>'AjaxController@getLoaiTin');
+	});*/
 
+	Route::group(['prefix' => 'ajax'],function(){
+		Route::get('/loaitin/{idTheLoai}','AjaxController@getLoaiTin');	
+	});
+	
 });
 
-
-
+	
 
 Route::get('test', function () {
     return view('admin.theloai.danhsach');

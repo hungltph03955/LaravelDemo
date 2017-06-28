@@ -8,6 +8,7 @@
                     <small>Danh Sách</small>
                 </h1>
             </div>
+            @include('admin.blocks.error')
             <!-- /.col-lg-12 -->
             <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                 <thead>
@@ -33,7 +34,7 @@
                         <td>{{ $item_item_tintuc->loaitin->theloai->Ten }}</td>
                         <td>{{ $item_item_tintuc->TomTat }}</td>
                         <td>
-                            <img style="width: 100%;" src="{!! asset('/upload/tintuc/'.$item_item_tintuc['Hinh']) !!}" alt=""/>
+                            <img style="width: 100%;" src="{!! asset('public/upload/tintuc/'.$item_item_tintuc['Hinh']) !!}" alt=""/>
                         </td>
                         <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="#"> Delete</a></td>
                         <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="#">Edit</a></td>

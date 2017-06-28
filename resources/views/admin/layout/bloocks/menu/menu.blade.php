@@ -45,7 +45,7 @@
                                     <a href="{{ route('gettintucDanhSach') }}">Danh sách tin tức</a>
                                 </li>
                                 <li>
-                                    <a href="#">Thêm tin tức</a>
+                                    <a href="{{ route('gettintucThem') }}">Thêm tin tức</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
