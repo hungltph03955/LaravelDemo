@@ -33,11 +33,11 @@
                         <td>{{ $item_item_tintuc->loaitin->Ten }}</td>
                         <td>{{ $item_item_tintuc->loaitin->theloai->Ten }}</td>
                         <td>{{ $item_item_tintuc->TomTat }}</td>
-                        <td>
+                        <td style="width: 14%;">
                             <img style="width: 100%;" src="{!! asset('public/upload/tintuc/'.$item_item_tintuc['Hinh']) !!}" alt=""/>
                         </td>
-                        <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="#"> Delete</a></td>
-                        <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="#">Edit</a></td>
+                        <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="{{ route('gettintucXoa', ['id' => $item_item_tintuc["id"] ]) }}" onclick ="return xacnhanxoa('Bạn có chắc chắn muốn xóa')"> Delete</a></td>
+                        <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="{{ route('gettintucSua', ['id' => $item_item_tintuc["id"] ]) }}">Edit</a></td>
                     </tr>
                 @endforeach
 

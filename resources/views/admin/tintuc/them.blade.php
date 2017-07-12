@@ -15,7 +15,7 @@
                 <input type="hidden" name="_token" value="{!!csrf_token()!!}">
                     <div class="form-group">
                         <label>Tiêu đề</label>
-                        <input class="form-control" name="txtName" placeholder="Hãy nhập Tiêu đề Tin" />
+                        <input class="form-control" name="txtName" placeholder="Hãy nhập Tiêu đề Tin" value="{!! old('txtName') !!}" />
                     </div>
                     <div class="form-group">
                         <label>Thể Loại</label>
@@ -35,11 +35,11 @@
                     </div>
                     <div class="form-group">
                         <label>Tóm Tắt</label>
-                        <textarea id="demo" class="form-control ckeditor" rows="3" name="txtIntro"></textarea>
+                        <textarea id="demo" class="form-control ckeditor" rows="3" name="txtIntro">{!! old('txtIntro') !!}</textarea>
                     </div>
                     <div class="form-group">
                         <label>Nội Dung</label>
-                        <textarea id="demo" class="form-control ckeditor" rows="3" name="txtContent"></textarea>
+                        <textarea id="demo" class="form-control ckeditor" rows="3" name="txtContent">{!! old('txtContent') !!}</textarea>
                     </div>
                     <div class="form-group">
                         <label>Hình Ảnh</label>
@@ -48,10 +48,10 @@
                     <div class="form-group">
                         <label>Nổi bật</label>
                         <label class="radio-inline">
-                            <input name="rdoStatus" value="1" checked="" type="radio">Có 
+                            <input name="rdoStatus" value="0" checked="" type="radio">Không 
                         </label>
                         <label class="radio-inline">
-                            <input name="rdoStatus" value="2" type="radio">Không
+                            <input name="rdoStatus" value="1" type="radio">Có
                         </label>
                     </div>
                     <button type="submit" class="btn btn-default">Thêm Tin Tức</button>

@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ThemTinTucRequest extends FormRequest
+class SuaTinTucRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,11 +24,11 @@ class ThemTinTucRequest extends FormRequest
     public function rules()
     {
         return [
-             'txtName'      => 'required|unique:tintuc,TieuDe|min:3|max:50',
+            'txtName'      => 'required|min:3|max:50',
              'slcLoaiTin'   => 'required',
              'txtIntro'     => 'required',
              'txtContent'   => 'required',
-             'fImages'      => 'required|image'
+             'fImages'      => 'image'
         ];
     }
 
@@ -36,13 +36,11 @@ class ThemTinTucRequest extends FormRequest
     {
         return [
             'txtName.required'      => 'Vui lòng nhập tiêu đề tin',
-            'txtName.unique'        => 'Tiêu đề tin đã trùng',
             'txtName.min'           => 'Tiêu đề quá ngắn',
             'txtName.max'           => 'Tiêu đề quá dài',
             'slcLoaiTin.required'   => 'Hãy Chọn loại tin',
             'txtIntro.required'     => 'hãy nhập Tóm tắt tin',
             'txtContent.required'   => 'Hãy Nhập Nội dung tin',
-            'fImages.required'      => 'Hãy nhập hình ảnh tin',
             'fImages.image'         => 'Ảnh tin không đúng định dạng'
         ];
     }
